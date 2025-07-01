@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from visitor_counter.views import increment_counter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('visitor/',include('visitor_counter.urls'))
+    path('visitor/',include('visitor_counter.urls')),
+    path('',increment_counter)
 ]
